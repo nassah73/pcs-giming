@@ -8,11 +8,23 @@ export default function Header(){
 }
 function Content(){
     return(
-        <div className=" bg-black h-90 relative">
+        <div className=" bg-black h-80 relative">
            
-             <div className='w-50  justify-self-center absolute top-20  '>
-             <img src={Imge} alt="" className="w-40 shadow-[0_0_100px_50px_rgba(255,255,255,0.2)] bg-none" />
-             </div>
+       <div>    {/* 1. هاد الـ div هي الإضاءة (Glow) بوحدها */}
+    <div className="absolute top-15 justify-self-center w-64 h-64 bg-white rounded-full blur-[100px] opacity-30 z-0">
+        {/* هادي خاوية، خدمتها غير تعطي الضوء */}
+    </div>
+
+    {/* 2. هاد الـ div هي اللي هازة الصورة باش تبقى الفوق */}
+    <div className="relative top-20 z-10 justify-self-center">
+        <img src={Imge} alt="logo" className="w-40" />
+    </div>
         </div>
+        <div className='bg-blue-200 z-20 w-80 absolute right-1/5 top-20 leading-[2.5] pl-4'>
+            <h1 className='text-center text-2xl text-white'>hello world</h1>
+            <p className=' text-white'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque reprehenderit iure incidunt blanditiis? Consectetur, adipisci?</p>
+        
+        </div>
+        </div> 
     )
 }
