@@ -14,20 +14,20 @@ export default function Header(){
         <div className="bg-[#0C2C55] h-screen  mt-10">
         <Navbar/>
         <Content/>
-    
+        <Container/>
         </div>
     )
 }
 function Content(){
     return(
-        <div className=" bg-black h-80 relative">
+        <div className=" bg-black h-80 relative grid grid-cols-1 sm xl:grid-cols-1">
            
        <div>    
-    <div className="absolute top-15 justify-self-center w-64 h-64 bg-white rounded-full blur-[100px] opacity-30 z-0">
+    <div className="absolute top-15 left-1/3 w-64 h-64 bg-white rounded-full blur-[100px] opacity-30 z-0">
     </div>
 
-    <div className="relative top-20 z-10 justify-self-center">
-        <img src={Imge} alt="logo" className="w-40" />
+    <div className="relative top-8 left-1/3 z-10 ">
+        <img src={Imge} alt="logo" className="w-60" />
     </div>
         </div>
         <div className=' z-20 w-80 absolute right-1/5 top-25 leading-[2.5]  '>
@@ -67,5 +67,59 @@ function Navbar(){
                
            </div>
     </div>
+    )
+}
+function Container(){
+    const items=['item1','item2','item3']
+    return(
+        <div className=''>
+              <div>
+                <div className='grid grid-cols-12'>
+                    <div className=' col-span-3 text-gray-500 mt-2 w-80 h-85   ml-10'>
+                          <h1 className='text-xl mb-2 font-[700] uppercase'>filter by</h1>
+                          <div className='flex flex-col  gap-5'>
+                          <select defaultValue="default" name='processor' id='processor'  >
+                                <option value="default" disabled> Processor </option>
+                                 {items.map((item)=>{
+                                    return <option>{item}</option>
+                                 })}
+                            </select>
+                            <hr className='text-[#BFC6C4]' />
+                            <select defaultValue="default" name='cpu' id='cpu'  >
+                                <option value="default" disabled> cpu </option>
+                                 {items.map((item)=>{
+                                    return <option>{item}</option>
+                                 })}
+                            </select>
+                            <hr className='text-[#BFC6C4]' />
+                            <select defaultValue="default" name='price range' id='price range'  >
+                                <option value="default" disabled> price range </option>
+                                 {items.map((item)=>{
+                                    return <option>{item}</option>
+                                 })}
+                            </select>
+                             <hr className='text-[#BFC6C4]' />
+                            <select defaultValue="default" name='case type' id='case type'  >
+                                <option value="default" disabled> case type </option>
+                                 {items.map((item)=>{
+                                    return <option>{item}</option>
+                                 })}
+                            </select>
+                             <hr className='text-[#BFC6C4]' />
+                            <select defaultValue="default" name='brand' id='brand'  >
+                                <option value="default" disabled> Brand</option>
+                                 {items.map((item)=>{
+                                    return <option>{item}</option>
+                                 })}
+                            </select>
+                             <hr className='text-[#BFC6C4] ' />
+                             </div>
+                    </div>
+                    <div className=' bg-amber-400 col-span-9'>
+                           <h1 className='font-[600] text-white uppercase text-2xl'  >Featured caming rigs</h1>
+                    </div>
+                </div>
+              </div>
+        </div>
     )
 }
