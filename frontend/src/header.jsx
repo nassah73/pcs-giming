@@ -1,8 +1,20 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+  faMagnifyingGlass, 
+  faUser, 
+  faHeart, 
+  faCartShopping 
+} from '@fortawesome/free-solid-svg-icons'; 
+import LogoImg from './bglogo-removebg-preview.png'
 import Imge from './kisspng-computer-cases-housings-cooler-master-microatx-m-malaysia-tower-5b4fefeb4c8092.9902749315319654193134-removebg-preview.png'
+
 export default function Header(){
     return(
+
         <div className="bg-[#0C2C55] h-screen  mt-10">
+        <Navbar/>
         <Content/>
+    
         </div>
     )
 }
@@ -10,12 +22,10 @@ function Content(){
     return(
         <div className=" bg-black h-80 relative">
            
-       <div>    {/* 1. هاد الـ div هي الإضاءة (Glow) بوحدها */}
+       <div>    
     <div className="absolute top-15 justify-self-center w-64 h-64 bg-white rounded-full blur-[100px] opacity-30 z-0">
-        {/* هادي خاوية، خدمتها غير تعطي الضوء */}
     </div>
 
-    {/* 2. هاد الـ div هي اللي هازة الصورة باش تبقى الفوق */}
     <div className="relative top-20 z-10 justify-self-center">
         <img src={Imge} alt="logo" className="w-40" />
     </div>
@@ -27,5 +37,31 @@ function Content(){
         
         </div>
         </div> 
+    )
+}
+
+function Navbar(){
+    return(
+    <div className=' flex justify-around'>
+        <div className='flex '>
+            <img src={LogoImg} alt="" className='w-50 ' />
+        </div>
+        <div  className='flex  items-center mr-[100px]'>
+            <ul className='flex justify-between gap-10 text-white '>
+                <li>pcs</li>
+                <li>components</li>
+                <li>laptops</li>
+                <li>Gear</li>
+                <li>software</li>
+                <li>support</li>
+            </ul>
+        </div>
+           <div className='flex text-white'>
+                <button className="mx-2"><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
+                <button className="mx-2"><FontAwesomeIcon icon={faUser} /></button>
+                <button className="mx-2"><FontAwesomeIcon icon={faHeart} /></button>
+                <button className="mx-2"><FontAwesomeIcon icon={faCartShopping} /></button>
+           </div>
+    </div>
     )
 }
