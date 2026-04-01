@@ -41,26 +41,30 @@ function Content(){
 }
 
 function Navbar(){
+    const items=['pcs','components','laptops','Gear','software','support']
+    const icons =[faMagnifyingGlass,faUser,faHeart,faCartShopping]
     return(
     <div className=' flex justify-around'>
         <div className='flex '>
             <img src={LogoImg} alt="" className='w-50 ' />
         </div>
         <div  className='flex  items-center mr-[100px]'>
-            <ul className='flex justify-between gap-10 text-white '>
-                <li>pcs</li>
-                <li>components</li>
-                <li>laptops</li>
-                <li>Gear</li>
-                <li>software</li>
-                <li>support</li>
+            <ul className='flex justify-between gap-10 text-white'>
+             { items.map((item)=>{ return <li key={item} className='hover:text-yellow-200 cursor-pointer' >{item}</li>
+                    
+                })}
+                
             </ul>
         </div>
            <div className='flex text-white'>
-                <button className="mx-2"><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
-                <button className="mx-2"><FontAwesomeIcon icon={faUser} /></button>
-                <button className="mx-2"><FontAwesomeIcon icon={faHeart} /></button>
-                <button className="mx-2"><FontAwesomeIcon icon={faCartShopping} /></button>
+                 
+                  { icons.map((item,index)=>{
+                    return <button key={index} className="mx-2 hover:text-amber-200">
+                        <FontAwesomeIcon  icon={item} />
+                    </button>
+                   }) 
+                }
+               
            </div>
     </div>
     )
