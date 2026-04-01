@@ -20,9 +20,10 @@ function Content(){
         <img src={Imge} alt="logo" className="w-40" />
     </div>
         </div>
-        <div className='bg-blue-200 z-20 w-80 absolute right-1/5 top-20 leading-[2.5] pl-4'>
-            <h1 className='text-center text-2xl text-white'>hello world</h1>
-            <p className=' text-white'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque reprehenderit iure incidunt blanditiis? Consectetur, adipisci?</p>
+        <div className=' z-20 w-80 absolute right-1/5 top-25 leading-[2.5]  '>
+            <h1 className=' text-2xl text-white uppercase tracking-[2px] font-[600]'>buy your ultimate pc</h1>
+            <p className=' text-white '>power,performance.perfection </p>
+            <button className='uppercase bg-blue-500 text-white rounded-[5px] px-5.5 hover:bg-blue-600 text-[13px]'>customize &buy now</button>
         
         </div>
         </div> 
