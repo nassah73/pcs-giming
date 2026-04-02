@@ -1,4 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Imga from './bglogo-removebg-preview.png'
+import Swiper from 'swiper';
+// import Swiper styles
+import 'swiper/css';
 import { 
   faMagnifyingGlass, 
   faUser, 
@@ -7,7 +11,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons'; 
 import LogoImg from './bglogo-removebg-preview.png'
 import Imge from './kisspng-computer-cases-housings-cooler-master-microatx-m-malaysia-tower-5b4fefeb4c8092.9902749315319654193134-removebg-preview.png'
-
+import Objet from './objet';
 export default function Header(){
     return(
 
@@ -114,12 +118,28 @@ function Container(){
                             </select>
                              <hr className='text-[#BFC6C4] ' />
                              </div>
-                    </div>
+                 </div>
                     <div className=' bg-amber-400 col-span-9'>
-                           <h1 className='font-[600] text-white uppercase text-2xl'  >Featured caming rigs</h1>
-                    </div>
+                           <h1 className='font-[600] col-span-1 text-white uppercase text-2xl' >Featured caming rigs</h1>
+                           <div className='col-span-8 bg-amber-200 h-[100%]  ml-10'>
+                                      {Objet.map((item)=>{
+                                    return(
+                                        <div key={item.id} className='bg-yellow-950 h-[90%] w-1/4 rounded-2xl '>
+                                               <img src={item.img} alt="Camera Rig" className='w-50 justify-self-center relative top-2 bg-amber-700 h-40 object-cover' />
+                                               <h1 className='text-white  mt-2 text-2xl ml-2'>{item.name}</h1>
+                                               <p className='text-white ml-2'>{item.description}</p>
+                                               <p className='text-gray-400 ml-2'>$ {item.price.toFixed(2)}</p>
+                                               <button className='bg-amber-500 text-white py-2 px-4 rounded-md hover:bg-amber-600 w-[90%] relative left-2'>Add to Cart</button>
+                                     </div>     
+                                    )
+                                 )}
+                               
+                                    
+                           </div>
+                     </div>
+               </div>
                 </div>
               </div>
-        </div>
+       
     )
 }
