@@ -3,7 +3,7 @@ import 'swiper/css';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Imga from './bglogo-removebg-preview.png'
-
+import Objet2 from './objet2'
 
 import 'swiper/css';
 import { 
@@ -20,11 +20,11 @@ import Objet from './objet';
 export default function Header(){
     return(
 
-        <div className="bg-[#0C2C55]   mt-10">
+        <div className="bg-[#0C2C55] w-screen overflow-x-hidden  mt-10">
         <Navbar/>
         <Content/>
         <Container/>
-        <Fotter/>
+        <Beffotter/>
         </div>
     )
 }
@@ -153,7 +153,7 @@ function Container(){
                                             >                                       
                                            {Objet.map((item) => (
                                                  <SwiperSlide key={item.id}>
-                                                         <div className='bg-blue-600 rounded-2xl p-4 h-full flex flex-col'>
+                                                         <div className='bg-white/5 backdrop-blur-md rounded-2xl p-4 h-full flex flex-col'>
                                     <img src={item.img} alt={item.name} className='w-full h-40 object-contain bg-amber-700 rounded-xl' />
                                     <h1 className='text-white text-xl font-bold mt-4'>{item.name}</h1>
                                     <p className='text-gray-300 text-sm my-2 flex-grow'>{item.description}</p>
@@ -177,11 +177,26 @@ function Container(){
        
     )
 }
-function Fotter(){
+function Beffotter(){
     return(
-      
-        <div className='w-screen h-screen'>
-
-        </div>   
+        <>
+          <h1 className='text-white uppercase ml-10 text-2xl font-[600] '>categories</h1>
+        <div className='grid grid-cols-12 ml-10 mt-2'>
+           
+              
+                    {Objet2.map((item)=>{
+                        return(
+                     <div key={item.id} className='bg-white/5 backdrop-blur-md rounded-[10px] mr-4'>
+                         <img src={item.img} alt="" className='w-50 rounded-[5px]' />
+                        <p className='text-white text-center'>{item.descption}</p>
+                    </div>
+                        )
+                    })}
+             
+              <div className='grid-cols-8 '>
+                  
+              </div>
+        </div> 
+        </> 
             )  
-         }
+         } 
