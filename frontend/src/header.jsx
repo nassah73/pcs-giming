@@ -1,13 +1,18 @@
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Imga from './bglogo-removebg-preview.png'
-import Swiper from 'swiper';
-// import Swiper styles
+
+
 import 'swiper/css';
 import { 
   faMagnifyingGlass, 
   faUser, 
   faHeart, 
-  faCartShopping 
+  faCartShopping ,
+  faChevronLeft,    // سهم اليسار
+  faChevronRight
 } from '@fortawesome/free-solid-svg-icons'; 
 import LogoImg from './bglogo-removebg-preview.png'
 import Imge from './kisspng-computer-cases-housings-cooler-master-microatx-m-malaysia-tower-5b4fefeb4c8092.9902749315319654193134-removebg-preview.png'
@@ -15,10 +20,11 @@ import Objet from './objet';
 export default function Header(){
     return(
 
-        <div className="bg-[#0C2C55] h-screen  mt-10">
+        <div className="bg-[#0C2C55]   mt-10">
         <Navbar/>
         <Content/>
         <Container/>
+        <Fotter/>
         </div>
     )
 }
@@ -74,8 +80,11 @@ function Navbar(){
     )
 }
 function Container(){
+  
+    
     const items=['item1','item2','item3']
     return(
+     
         <div className=''>
               <div>
                 <div className='grid grid-cols-12'>
@@ -119,27 +128,60 @@ function Container(){
                              <hr className='text-[#BFC6C4] ' />
                              </div>
                  </div>
-                    <div className=' bg-amber-400 col-span-9'>
+                    <div className=' col-span-9'>
+                        
                            <h1 className='font-[600] col-span-1 text-white uppercase text-2xl' >Featured caming rigs</h1>
-                           <div className='col-span-8 bg-amber-200 h-[100%]  ml-10'>
-                                      {Objet.map((item)=>{
-                                    return(
-                                        <div key={item.id} className='bg-yellow-950 h-[90%] w-1/4 rounded-2xl '>
-                                               <img src={item.img} alt="Camera Rig" className='w-50 justify-self-center relative top-2 bg-amber-700 h-40 object-cover' />
-                                               <h1 className='text-white  mt-2 text-2xl ml-2'>{item.name}</h1>
-                                               <p className='text-white ml-2'>{item.description}</p>
-                                               <p className='text-gray-400 ml-2'>$ {item.price.toFixed(2)}</p>
-                                               <button className='bg-amber-500 text-white py-2 px-4 rounded-md hover:bg-amber-600 w-[90%] relative left-2'>Add to Cart</button>
-                                     </div>     
-                                    )
-                                 )}
+                           <div className='col-span-8 h-[100%]  ml-10'>
+                                    <nav className='justify-self-end'>
+       
+                                   <button className='prvBtn w-20 h-6 rounded-[5px] text-white'><FontAwesomeIcon icon={faChevronLeft} /></button>
+                                   <button className='NextBtn  w-20 h-6 rounded-[5px] text-white'><FontAwesomeIcon icon={faChevronRight} /></button>
+                                 
+                                     </nav>
+                                            <Swiper
+                                        
+                                                  spaceBetween={20}
+                                                  slidesPerView={3}
+                                                  modules={[Navigation, Pagination, Autoplay]}
+                                                  
+                                                  navigation={{
+                                                      nextEl: '.NextBtn', 
+                                                      prevEl: '.prvBtn',
+                                                              }}
+                                                  autoplay={{ delay: 3000 }}
+                                                  pagination={{ clickable: true }}
+                                            >                                       
+                                           {Objet.map((item) => (
+                                                 <SwiperSlide key={item.id}>
+                                                         <div className='bg-blue-600 rounded-2xl p-4 h-full flex flex-col'>
+                                    <img src={item.img} alt={item.name} className='w-full h-40 object-contain bg-amber-700 rounded-xl' />
+                                    <h1 className='text-white text-xl font-bold mt-4'>{item.name}</h1>
+                                    <p className='text-gray-300 text-sm my-2 flex-grow'>{item.description}</p>
+                                    <p className='text-amber-400 font-bold'>$ {item.price.toFixed(2)}</p>
+                                    <button className='bg-amber-500 text-white py-2 rounded-md mt-4 hover:bg-amber-600 transition-all'>
+                                        Add to Cart
+                                    </button>
+                                                         </div>
+                                                  </SwiperSlide>
+                                            ))}
+                    </Swiper>
+                                    
+                                 
                                
                                     
                            </div>
-                     </div>
+                    </div>
                </div>
-                </div>
-              </div>
+            </div>
+        </div>
        
     )
 }
+function Fotter(){
+    return(
+      
+        <div className='w-screen h-screen'>
+
+        </div>   
+            )  
+         }
