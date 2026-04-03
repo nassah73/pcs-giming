@@ -223,7 +223,7 @@ function Beffotter(){
                 </p>
              </div>
           </div>
-          <div className='bg-amber-300  text-white capitalize '>
+          <div className='  text-white capitalize '>
               <div className='relative left-1/3'>
                 <h1 className='font-[500]  text-[19px] mt-7'>company</h1>
                <ul className='mt-2'>
@@ -235,8 +235,30 @@ function Beffotter(){
               </div>
                
           </div>
-          <div></div>
-          <div></div>
+           <div className='  text-white capitalize '>
+              <div className='relative left-1/3'>
+                <h1 className='font-[500]  text-[19px] mt-7'>Support</h1>
+               <ul className='mt-2'>
+                <li>Contact Us</li>
+                <li>Components</li>
+                <li>Laptops</li>
+                <li>Policy</li>
+               </ul>
+              </div>
+               
+          </div>
+           <div className='  text-white capitalize '>
+              <div className='relative left-1/3'>
+                <h1 className='font-[500]  text-[19px] mt-7'>My Account</h1>
+               <ul className='mt-2'>
+                <li>My Account</li>
+                <li>Resources</li>
+                <li>Gear</li>
+                <li>Contact Us</li>
+               </ul>
+              </div>
+               
+          </div>
           <div></div>
           <div></div>
         </div>
