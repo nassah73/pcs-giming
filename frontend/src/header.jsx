@@ -25,6 +25,7 @@ export default function Header(){
         <Content/>
         <Container/>
         <Beffotter/>
+        <Foter/>
         </div>
     )
 }
@@ -208,4 +209,39 @@ function Beffotter(){
         </div> 
         </> 
             )  
-         } 
+ } 
+ function Foter(){
+    return(
+    <div >
+        <div className='grid grid-cols-6 ml-10 mt-5 h-70 bg-amber-800'>
+          <div>
+            <img src={Imga} alt="" className='w-50 justify-self-center mt-5'/>
+             <div>
+                <p className='text-white text-center mt-2'>
+                    cyberbyte .custom-built and pre-configuration
+                     pereonal'd personal pemigunai 
+                </p>
+             </div>
+          </div>
+          <div className='bg-amber-300  text-white capitalize '>
+              <div className='relative left-1/3'>
+                <h1 className='font-[500]  text-[19px] mt-7'>company</h1>
+               <ul className='mt-2'>
+                <li>Home</li>
+                <li>about us</li>
+                <li>cuxtoners</li>
+                <li>press</li>
+               </ul>
+              </div>
+               
+          </div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+    </div>
+    )
+ }
+
+        
