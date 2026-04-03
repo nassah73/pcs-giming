@@ -12,12 +12,3 @@ const objet=[{ id: 1,img:"https://tse1.mm.bing.net/th/id/OIP.bSnBYB7Dbr3_-Cl3tPN
 
 
 export default objet
-
-
-/*     <div key={item.id} className='bg-yellow-950 h-[90%] w-1/4 rounded-2xl '>
-                                               <img src={item.img} alt="Camera Rig" className='w-50 justify-self-center relative top-2 bg-amber-700 h-40 object-cover' />
-                                               <h1 className='text-white  mt-2 text-2xl ml-2'>{item.name}</h1>
-                                               <p className='text-white ml-2'>{item.description}</p>
-                                               <p className='text-gray-400 ml-2'>$ {item.price.toFixed(2)}</p>
-                                               <button className='bg-amber-500 text-white py-2 px-4 rounded-md hover:bg-amber-600 w-[90%] relative left-2'>Add to Cart</button>
-                                     </div> */

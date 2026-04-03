@@ -4,7 +4,7 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Imga from './bglogo-removebg-preview.png'
 import Objet2 from './objet2'
-
+import IMgAds from './Gemini_Generated_Image_7mqz4u7mqz4u7mqz.png'
 import 'swiper/css';
 import { 
   faMagnifyingGlass, 
@@ -193,8 +193,17 @@ function Beffotter(){
                         )
                     })}
              
-              <div className='grid-cols-8 '>
-                  
+              <div className='grid-cols-8 w-screen relative '>
+                  <div className='bg-white/5 backdrop-blur-md h-[100%] w-[30%] absolute right-1/2 rounded-2xl'>
+                    <img src={IMgAds} alt="" className='rounded-2xl absolute z-1'/>
+                      <div  className='text-white absolute z-2 uppercase mt-2 ml-5'>
+                        <h1 className='text-[23px] leading-[26px] font-[600]'>top-rated </h1>
+                         <h1 className='text-[25px] font-[600]'>component deals</h1>
+                        <p >nvidia rtx 4080 comanet</p>
+                        <button className='bg-blue-600 p-[5px] px-[30px] mt-[4px] rounded-[10px] hover:cursor-pointer hover:bg-blue-700'>learn now</button>
+                      </div>
+                     
+                  </div>
               </div>
         </div> 
         </> 
