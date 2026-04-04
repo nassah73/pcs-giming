@@ -1,5 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Imga from './bglogo-removebg-preview.png'
@@ -13,6 +14,7 @@ import {
   faCartShopping ,
   faChevronLeft,    // سهم اليسار
   faChevronRight
+ 
 } from '@fortawesome/free-solid-svg-icons'; 
 import LogoImg from './bglogo-removebg-preview.png'
 import Imge from './kisspng-computer-cases-housings-cooler-master-microatx-m-malaysia-tower-5b4fefeb4c8092.9902749315319654193134-removebg-preview.png'
@@ -211,6 +213,11 @@ function Beffotter(){
             )  
  } 
  function Foter(){
+     const socialMedia = [
+    { name: 'Facebook', icon: faFacebook, color: 'hover:text-blue-500' },
+    { name: 'Instagram', icon: faInstagram, color: 'hover:text-pink-500' },
+    { name: 'Twitter', icon: faTwitter, color: 'hover:text-blue-400' },
+  ];
     return(
     <div >
         <div className='grid grid-cols-6 ml-10 mt-5 h-70 bg-amber-800'>
@@ -259,7 +266,16 @@ function Beffotter(){
               </div>
                
           </div>
-          <div></div>
+          <div className='relative left-1/3'>
+            <nav className='text-white capitalize'>
+             <h1 className='font-[500]  text-[19px] mt-7'>Social media</h1>
+             {socialMedia.map((item,index)=>{
+                 return(
+                    <li key={item.index} className={ `list-none leading-10 ${item.color} hover:cursor-pointer`}><FontAwesomeIcon icon={item.icon} className="text-xl" />   <span className=' relative mb-4'>{item.name}</span></li>
+                 )
+             })}
+             </nav>
+          </div>
           <div></div>
         </div>
     </div>
