@@ -28,6 +28,8 @@ export default function Header(){
         <Container/>
         <Beffotter/>
         <Foter/>
+       <hr  className='text-white'/>
+       <CopieRhit/>
         </div>
     )
 }
@@ -218,9 +220,14 @@ function Beffotter(){
     { name: 'Instagram', icon: faInstagram, color: 'hover:text-pink-500' },
     { name: 'Twitter', icon: faTwitter, color: 'hover:text-blue-400' },
   ];
+   const cards=[{id:"1",img:'https://oxshare.com/wp-content/uploads/2021/05/visa-logo-png-transparent.png'},
+                {id:"2",img:'https://logos-world.net/wp-content/uploads/2020/09/Mastercard-Logo-2016-2020.png'},
+                {id:"3",img:'https://tse2.mm.bing.net/th/id/OIP.jSYQDnQnweCFDAkKmhK74wHaFj?rs=1&pid=ImgDetMain&o=7&rm=3'},
+               
+   ]
     return(
     <div >
-        <div className='grid grid-cols-6 ml-10 mt-5 h-70 bg-amber-800'>
+        <div className='grid grid-cols-6 ml-10 mt-20 h-70 '>
           <div>
             <img src={Imga} alt="" className='w-50 justify-self-center mt-5'/>
              <div>
@@ -276,10 +283,32 @@ function Beffotter(){
              })}
              </nav>
           </div>
-          <div></div>
+          <div className='text-white capitalize'>
+             <nav  className='relative left-1/7'>
+                <h1 className='font-[500]  text-[19px] mt-7'>payment methode</h1>
+                <div className='grid grid-cols-4'>
+                    {cards.map((item)=>{
+                        return(
+                           <img key={item.id} src={item.img} alt="" className='w-10 mt-4' />
+                        )
+                    })}
+                </div>
+             </nav>
+          </div>
         </div>
     </div>
     )
  }
-
-        
+function CopieRhit(){
+    return(
+        <div className='h-20 mt-5 ml-5 relative text-white'>
+            <p className='text-white'>&copy; 2026 <span className='font-[500]'>Cyberbyte </span>style reverced</p>
+             <div className='absolute right-15 top-0.5'>
+                <p>HASSAN ES-SEBAIY</p>
+                <p className='uppercase'>choaib bouaaliouat</p>
+                <p>MOHAMED NAIT BIHI</p>
+             </div>
+        </div>
+    )
+}
+       
