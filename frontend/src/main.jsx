@@ -1,6 +1,6 @@
 import {createRoot}from 'react-dom/client'
-import './index.css'
-import Header from'./header'
+import './Home/index.css'
+import Header from'./Home/header'
 const root= createRoot(document.getElementById('root'))
 root.render(
   <Header/>
